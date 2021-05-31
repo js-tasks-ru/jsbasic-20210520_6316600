@@ -1,3 +1,7 @@
+let arrTwo = [];
 function filterRange(arr, a, b) {
-  // ваш код...
+  arr.forEach((element) => {
+    b >= element >= a ? arrTwo.push(element) : false;
+  });
+  return arrTwo;
 }

@@ -1,7 +1,7 @@
 function getMinMax(str) {
-  let arr = str.split(",").join(" ").split(" ");
+  let arra = str.split(",").join(" ").split(" ");
   let newArr = [];
-  arr.forEach((item) => {
+  arra.forEach((item) => {
     if (parseInt(item)) {
       newArr.push(parseFloat(item));
     }

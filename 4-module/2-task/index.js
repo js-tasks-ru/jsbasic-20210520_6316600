@@ -1,3 +1,5 @@
 function makeDiagonalRed(table) {
-  // ваш код...
+  for (let key of table.rows) {
+    key.cells[key.rowIndex].style.backgroundColor = "red";
+  }
 }

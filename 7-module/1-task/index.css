@@ -22,7 +22,7 @@
   z-index: 1;
   top: 0;
   bottom: 0;
-  width: 120px;
+  /* width: 120px; */
   flex-direction: column;
   justify-content: center;
   cursor: pointer;

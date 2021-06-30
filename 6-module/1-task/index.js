@@ -15,15 +15,17 @@
 export default class UserTable {
   constructor(rows) {
     this.div = document.createElement("div");
+    this.table = document.createElement("table");
+    this.tbody = document.createElement("tbody");
+    this.table.append(this.tbody);
+    this.div.append(this.table);
     this.item = rows
       .map(
         (key) =>
-          `<tr> <td>${key.name} <td>${key.age} <td>${key.salary} <td>${key.city} <td><button>X</button>`
+          `<tr><td>${key.name}</td> <td>${key.age}</td> <td>${key.salary}</td> <td>${key.city}</td> <td><button>X</button></td></tr>`
       )
       .join(" ");
-    // this.item = rows.map((key) =>`<tr> <td>${key.name}<td/> <td>${key.age}<td/> <td>${key.salary}<td/> <td>${key.city}<td/> <td><button>X</button><tr/>`).join(" ");
-    this.div.insertAdjacentHTML("beforeEnd", `<table><tbody>${this.item}`);
-    // this.div.insertAdjacentHTML('beforeEnd', `<table><tbody>${this.item}<table/><tbody/>`);
+    this.div.firstChild.lastChild.insertAdjacentHTML("afterbegin", `${this.item}`);
     this.elem = this.div;
     this.elem.addEventListener("click", this.onClick);
   }

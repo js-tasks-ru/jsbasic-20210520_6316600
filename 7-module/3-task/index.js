@@ -23,12 +23,15 @@ export default class StepSlider {
       let value = Math.round(leftRelative * segments);
       this.elem.querySelector(".slider__value").innerHTML = value;
       let valuePercents = (value / segments) * 100;
+      
       this.elem
         .querySelector(".slider__thumb")
         .style.left = `${valuePercents}%`;
+
       this.elem
         .querySelector( ".slider__progress")
         .style.width = `${valuePercents}%`;
+
       this.elem
         .querySelector(".slider__steps")
         .children[`${value}`].classList.add("slider__step-active");

@@ -58,7 +58,6 @@ export default class CartIcon {
               document.documentElement.clientWidth - this.elem.offsetWidth - 10
             )
           ) + "px";
-        console.log(leftIndent);
         Object.assign(this.elem.style, {
           position: "fixed",
           top: "50px",
@@ -66,26 +65,23 @@ export default class CartIcon {
           right: "10px",
           left: leftIndent,
         });
-        console.log("#1");
       } 
-      if (window.pageYOffset < this.initialTopCoord) {
+      if ((window.pageYOffset < this.initialTopCoord) || (document.documentElement.clientWidth <= 767)) {
         Object.assign(this.elem.style, {
           position: "",
           top: "",
           left: "",
           zIndex: "",
         });
-        console.log("#2");
       }
-      if (document.documentElement.clientWidth <= 767) {
-        Object.assign(this.elem.style, {
-          position: "",
-          top: "",
-          left: "",
-          zIndex: "",
-        });
-        console.log(getComputedStyle(this.elem).position);
-      }
+      // if (document.documentElement.clientWidth <= 767) {
+      //   Object.assign(this.elem.style, {
+      //     position: "",
+      //     top: "",
+      //     left: "",
+      //     zIndex: "",
+      //   });
+      // }
     }
   }
 }

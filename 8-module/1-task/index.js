@@ -5,6 +5,10 @@ export default class CartIcon {
     this.render();
 
     this.addEventListeners();
+    this.initialTopCoord =
+      this.elem.getBoundingClientRect().top + window.pageYOffset;
+    this.ser =
+      document.querySelector(".container").getBoundingClientRect().right + 20;
   }
 
   render() {
@@ -44,39 +48,44 @@ export default class CartIcon {
   }
 
   updatePosition() {
-    let initialTopCoord =
-      this.elem.getBoundingClientRect().top + window.pageYOffset;
-    let leftIndent =
-      Math.min(
-        document.querySelector(".container").getBoundingClientRect().right + 20,
-        document.documentElement.clientWidth - this.elem.offsetWidth - 10
-      ) + "px";
-
-    if (window.pageYOffset > initialTopCoord) {
-      Object.assign(this.elem.style, {
-        position: "fixed",
-        top: "50px",
-        zIndex: 1e3,
-        right: "10px",
-        left: leftIndent,
-        
-      });
-    } else {
-      Object.assign(this.elem.style, {
-        position: "",
-        top: "",
-        left: "",
-        zIndex: "",
-      });
-    }
-
-    if (document.documentElement.clientWidth <= 767) {
-      Object.assign(this.elem.style, {
-        position: "",
-        top: "",
-        left: "",
-        zIndex: "",
-      });
+    if (this.elem.offsetWidth) {
+      if (window.pageYOffset > this.initialTopCoord) {
+        let leftIndent =
+          Math.min(
+            document.querySelector(".container").getBoundingClientRect().right +
+              20,
+            Math.round(
+              document.documentElement.clientWidth - this.elem.offsetWidth - 10
+            )
+          ) + "px";
+        console.log(leftIndent);
+        Object.assign(this.elem.style, {
+          position: "fixed",
+          top: "50px",
+          zIndex: 1e3,
+          right: "10px",
+          left: leftIndent,
+        });
+        console.log("#1");
+      } 
+      if (window.pageYOffset < this.initialTopCoord) {
+        Object.assign(this.elem.style, {
+          position: "",
+          top: "",
+          left: "",
+          zIndex: "",
+        });
+        console.log("#2");
+      }
+      if (document.documentElement.clientWidth <= 767) {
+        Object.assign(this.elem.style, {
+          position: "",
+          top: "",
+          left: "",
+          zIndex: "",
+        });
+        console.log(getComputedStyle(this.elem).position);
+      }
     }
   }
 }

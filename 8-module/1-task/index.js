@@ -6,9 +6,9 @@ export default class CartIcon {
 
     this.addEventListeners();
     this.initialTopCoord =
-      this.elem.getBoundingClientRect().top + window.pageYOffset;
-    this.ser =
-      document.querySelector(".container").getBoundingClientRect().right + 20;
+    this.elem.getBoundingClientRect().top + window.pageYOffset;
+    this.ser = document.querySelector(".container").getBoundingClientRect().right + 20;
+      
   }
 
   render() {

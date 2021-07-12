@@ -148,20 +148,6 @@ export default class Cart {
     this.forma.addEventListener("submit", (event) => {
       this.onSubmit(event);
     });
-    let button = document.querySelector(".cart-buttons [type=submit]");
-    function promiseClick(button) {
-      return new Promise((resolve, reject) => {
-        button.addEventListener(
-          "click",
-          (event) => {
-            resolve(event);
-          },
-          { once: true }
-        );
-      });
-    }
-
-    promiseClick(button).then((event) => console.log(event));
   }
 
   onProductUpdate(cartItem, product) {

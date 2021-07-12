@@ -1,4 +1,3 @@
-// let button = document.querySelector('button')
 
 export default function promiseClick(button) {
   return new Promise((resolve, reject) => {

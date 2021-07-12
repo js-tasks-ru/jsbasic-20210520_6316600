@@ -16,24 +16,24 @@ export default class Carousel {
     this.divCarousel.insertAdjacentHTML(
       "afterbegin",
       `<div class="carousel__arrow carousel__arrow_right">
-         <img src="/jsbasic-20210520_6316600/assets/images/icons/angle-icon.svg" alt="icon">
+         <img src="/assets/images/icons/angle-icon.svg" alt="icon">
        </div>
        <div class="carousel__arrow carousel__arrow_left">
-         <img src="/jsbasic-20210520_6316600/assets/images/icons/angle-left-icon.svg" alt="icon">
+         <img src="/assets/images/icons/angle-left-icon.svg" alt="icon">
        </div>`
     );
     this.slides.forEach((key) =>
       this.divCarouselInner.insertAdjacentHTML(
         "beforeend",
         `<div class="carousel__slide" data-id="${key.id}">
-        <img src="/jsbasic-20210520_6316600/assets/images/carousel/${
+        <img src="/assets/images/carousel/${
           key.image
         }" class="carousel__img" alt="slide">
         <div class="carousel__caption">
           <span class="carousel__price">€${key.price.toFixed(2)}</span>
           <div class="carousel__title">${key.name}</div>
           <button type="button" class="carousel__button">
-            <img src="/jsbasic-20210520_6316600/assets/images/icons/plus-icon.svg" alt="icon">
+            <img src="/assets/images/icons/plus-icon.svg" alt="icon">
           </button>
         </div>
       </div>`
@@ -48,7 +48,6 @@ export default class Carousel {
     const inner = this.elem.querySelector(".carousel__inner");
     const cardButton = this.elem.querySelectorAll(".carousel__button");
     let lengthSlide;
-    console.log(inner.offsetWidth);
 
     let width = 0;
     left.style.display = "none";

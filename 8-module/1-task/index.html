@@ -88,12 +88,6 @@
     let addProductButton = document.querySelector('[data-add-product]');
     let removeAllProductsButton = document.querySelector('[data-remove-all-products]');
 
-    // addProductButton.addEventListener ('click', () => {
-    //   let productToAdd = Object.assign({}, product);
-    //   cart.products.push(productToAdd);
-
-    //   cartIcon.update(cart);
-    // });
     addProductButton.onclick = () => {
       let productToAdd = Object.assign({}, product);
       cart.products.push(productToAdd);

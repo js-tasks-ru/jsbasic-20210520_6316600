@@ -5,10 +5,10 @@ export default class StepSlider {
     this.slider.classList.add("slider");
     this.slider.insertAdjacentHTML(
       "beforeend",
-      `<div class="slider__thumb" style="left: 0%;">
+      `<div class="slider__thumb" style="left: 75%;">
       <span class="slider__value">${value}</span>
     </div>
-    <div class="slider__progress" style="width: 0%;"></div>
+    <div class="slider__progress" style="width: 75%;"></div>
     <div class="slider__steps">
   </div>`
     );

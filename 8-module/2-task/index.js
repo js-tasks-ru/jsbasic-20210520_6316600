@@ -8,7 +8,8 @@ export default class ProductGrid {
     this.addData();
   }
   updateFilter(filters) {
-    Object.assign(this.filters, filters);
+    // console.log(filters);
+    Object.assign(this.filters, {...filters});
 
     this.product = this.products;
 

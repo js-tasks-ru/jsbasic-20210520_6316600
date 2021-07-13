@@ -11,7 +11,7 @@ export default class Modal {
       <div class="modal__header">
         <!--Кнопка закрытия модального окна-->
         <button type="button" class="modal__close">
-          <img src="/jsbasic-20210520_6316600/assets/images/icons/cross-icon.svg" alt="close-icon" />
+          <img src="/assets/images/icons/cross-icon.svg" alt="close-icon" />
         </button>
         <h3 class="modal__title">
         </h3>
@@ -31,12 +31,10 @@ export default class Modal {
     document.body.append(this.modal);
   }
   setTitle(text) {
-    this.text = text;
-    this.modal.querySelector(".modal__title").innerHTML = this.text;
+    this.modal.querySelector(".modal__title").innerHTML = text;
   }
   setBody(node) {
-    this.node = node;
-    this.modal.querySelector(".modal__body").append(this.node);
+    this.modal.querySelector(".modal__body").append(node);
   }
   close() {
     this.modal.remove();

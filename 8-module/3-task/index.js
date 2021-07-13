@@ -36,14 +36,7 @@ export default class Cart {
   }
 
   updateProductCount(productId, amount) {
-    Array.prototype.remove = function (v) {
-      if (this.indexOf(v) != -1) {
-        this.splice(this.indexOf(v), 1);
-        return true;
-      }
-      return false;
-    };
-    this.cartItems.map((elems) => {
+    this.cartItems.map((elems, index) => {
       if (productId === elems.product.id) {
         if (amount === 1) {
           elems.count++;
@@ -51,7 +44,7 @@ export default class Cart {
           elems.count--;
         }
         if (elems.count === 0) {
-          this.cartItems.remove(elems);
+          this.cartItems.splice(index, 1);
         }
       }
     });
